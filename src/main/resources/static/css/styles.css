@@ -69,4 +69,5 @@ body {
 .contenedor-login input{
     border-color: gray;
     border-radius: 0.5rem;
+    padding-left: 10px;
 }

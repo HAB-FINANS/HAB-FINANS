@@ -1,5 +1,4 @@
 package com.habfinans.habfinans.entities;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,10 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="employees")
-public class Employee {
+@Table(name="profile")
+public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -18,19 +16,19 @@ public class Employee {
     @Column(name="name")
     private String name;
 
-    @Column(name="email")
+    /* @Column(email="email") */
     private String email;
 
-    @Column(name="role")
+    /* @Column(role="role") */
     private String role;
 
-    @Column(name="enterprise")
+   /*  @Column(enterprise="enterprise") */
     private String enterprise;
 
-    @Column(name="profile")
+    /* @Column(profile="profile") */
     private String profile;
 
-    @Column(name="password")
+    /* @Column(password="password") */
     private String password;
     public Long getId() {
         return id;
@@ -74,8 +72,4 @@ public class Employee {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
 }
-
-
