@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <h1>Hola Mundo!</h1>
+    <!-- <h1>Hola Mundo!</h1> -->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <a href="#" class="navbar-brand">Administrador</a>
     </nav>
@@ -24,6 +24,31 @@
         </div>
         <div class="row">
             <a th:href="@{/new}" class="btn btn-primary btn-sm mb3">Agregar empleado</a>
+
+        </div>
+        <div class="row">
+            <table class="table table-stripped table-bordered">
+                <thead class="table-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Enterprise</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="employee : ${employees}">
+                    <td th:text="${employee.id}"></td>
+                    <td th:text="${employee.name}"></td>
+                    <td th:text="${employee.email}"></td>
+                    <td th:text="${employee.role}"></td>
+                    <td th:text="${employee.enterprise}"></td>
+                    <td th:text="${employee.id}"></td>
+                  </tr>
+                </tbody>
+                </table>
 
         </div>
 

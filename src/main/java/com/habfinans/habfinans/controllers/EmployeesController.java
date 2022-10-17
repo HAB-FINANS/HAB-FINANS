@@ -30,7 +30,8 @@ public class EmployeesController {
     }
 
     @GetMapping({"/enter"})
-    public String paginaAdministrador(){
+    public String paginaAdministrador(Model model){
+        model.addAttribute("employees", service.getEmployees());
         return "pagina_admin";
     }
 
@@ -46,6 +47,7 @@ public class EmployeesController {
         this.service.createEmployee(employee);
         return new RedirectView("/enter");
     }
+
 
 
 /*     @RequestMapping(value = "/employees")
