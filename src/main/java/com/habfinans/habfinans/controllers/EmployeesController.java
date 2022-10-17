@@ -11,24 +11,14 @@ import java.util.List;
 
 @RestController
 public class EmployeesController {
-    @RequestMapping(value = "/employees45")
-    public Employee getEmployees(){
-        Employee employee = new Employee();
-        employee.setName("Andres Felipe");
-        employee.setEmail("afmendoza@gmail.com");
-        employee.setRole("Devolper");
-        employee.setEnterprise("AFMT SAS");
-        employee.setProfile("andresfelipe");
-        employee.setPassword("123456");
-        return employee;
-    }
+
 
     @RequestMapping(value = "/employees")
-    public List<Employee> getEmployees(@PathVariable Long id){
+    public List<Employee> getEmployees(){
         List<Employee> employees = new ArrayList<>();
 
         Employee employee = new Employee();
-        employee.setId(id);
+        employee.setId(10L);
         employee.setName("Andres Felipe");
         employee.setEmail("afmendoza@gmail.com");
         employee.setRole("Devolper");
@@ -36,9 +26,9 @@ public class EmployeesController {
         employee.setProfile("andresfelipe");
         employee.setPassword("123456");
 
-        employee.add(employee)
+        employees.add(employee);
+        return employees;
 
-        #return employee;
     }
 
 }
