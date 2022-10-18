@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
        
-    <title>Ingreso al sitio</title>
+    <title>Página Principal</title>
   
     <!-- <link rel="stylesheet" href="/HAB-FINANS/src/main/resources/static/css/styles.css"> -->
     <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
@@ -14,21 +14,35 @@
 
 </head>
 <body>
-    <!-- <h1>Hola Mundo!</h1> -->
-    <section class="container">
-        <section>
-            <p class="container-parrafo1">Bienviendo a la página de inicio de FINANS su software de administración</p>
-        </section>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a href="#" class="navbar-brand">Administrador</a>
+    </nav>
+    <section class="barra-lateral">
+        <div class="row">
+            <a th:href="@{/new}" class="btn btn-primary btn-sm mb3">Ingresos y egresos</a>
+        </div>
+        <div class="row">
+            <a th:href="@{/new}" class="btn btn-primary btn-sm mb3">Usuarios</a>
 
-        <section class="contenedor-login">
-           <h1 class="container-contenedor-login-texto">Ingreso de Administrador</h1> 
-           <form action="" class="contenedor-formulario">
-            <input placeholder="Usuario" type="text">
-            <input placeholder="Contraseña" type="password">
-            <button type="submit" th:href="@{/enter}" >ACCEDER</button>
-        </form>
-        </section>
+        </div>
+        <div class="row">
+            <a th:href="@{/new}" class="btn btn-primary btn-sm mb3">Empresas</a>
 
+        </div>
+    </section>
+
+    <section class="botones-principal">
+        <div class="botones-principal btn-princial">
+            <button type="submit" th:href="@{/new}" class="btn1">Sistema de gestión de ingresos y gastos</button>
+        </div>
+        <div class="botones-principal btn-princial">
+            <button type="submit" th:href="@{/new}" class="btn1">Sistema de gestión de usuarios</button>
+
+        </div>
+        <div class="botones-principal btn-princial">
+            <button type="submit" th:href="@{/new}" class="btn1">Sistema de gestión de empresa</button>
+
+        </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

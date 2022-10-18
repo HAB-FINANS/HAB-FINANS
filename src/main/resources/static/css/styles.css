@@ -71,3 +71,41 @@ body {
     border-radius: 0.5rem;
     padding-left: 10px;
 }
+
+.navbar.navbar-expand-md.bg-dark.navbar-dark{
+    margin-bottom: 50px;
+}
+
+.barra-lateral{
+    border: solid 2px;
+    border-color: gray;
+    margin: 1rem;
+    width: 12%;
+    border-radius: 10px;
+}
+
+.btn.btn-primary.btn-sm.mb3{
+    margin: 2rem;
+    padding: 1rem;
+    width: 100px;
+
+}
+
+.botones-principal{
+    display: flex;
+    justify-content: center;
+}
+
+.botones-principal.btn-princial{
+    padding: 1rem;
+    
+}
+
+.botones-principal.btn-princial .btn1{
+    height: 4rem;
+    background-color: #343a40;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
