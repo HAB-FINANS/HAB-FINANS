@@ -16,8 +16,48 @@
 <body>
     <!-- <h1>Hola Mundo!</h1> -->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a th:href="@{/index}" class="navbar-brand">Sistema de gestión de empresa</a>
+        <a th:href="@{/}" class="navbar-brand">Sistema de gestión de empresa</a>
     </nav>
+    <div class="container">
+        <div class="row">
+            <h1>Libreta de empresas</h1>
+        </div>
+
+        <div class="row">
+            <a th:href="@{/new_enterprise}" class="btn btn-primary btn-sm mb3">Agregar empresa</a>
+
+        </div>
+        <div class="row">
+            <table class="table table-stripped table-bordered">
+                <thead class="table-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Nit</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="enterprise : ${enterprises}">
+                    <td th:text="${enterprise.id}"></td>
+                    <td th:text="${enterprise.name}"></td>
+                    <td th:text="${enterprise.nit}"></td>
+                    <td th:text="${enterprise.address}"></td>
+                    <td th:text="${enterprise.phone}"></td>
+                    <td th:text="${enterprise.created_at}"></td>
+                    <td th:text="${enterprise.updated_at}"></td>
+                    <td th:text="${enterprise.created_at}"></td>
+                  </tr>
+                </tbody>
+                </table>
+
+        </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

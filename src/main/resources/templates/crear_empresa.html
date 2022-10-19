@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
        
-    <title>Página Principal</title>
+    <title>Ingreso al sitio</title>
   
     <!-- <link rel="stylesheet" href="/HAB-FINANS/src/main/resources/static/css/styles.css"> -->
     <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
@@ -14,36 +12,10 @@
 
 </head>
 <body>
+    <!-- <h1>Hola Mundo!</h1> -->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a href="#" class="navbar-brand">Página Principal</a>
+        <a th:href="@{/index}" class="navbar-brand">Sistema de gestión de empresa</a>
     </nav>
-    <section class="barra-lateral">
-        <div class="row">
-            <a th:href="@{/new}" class="btn btn-primary btn-sm mb3">Ingresos y egresos</a>
-        </div>
-        <div class="row">
-            <a th:href="@{/new}" class="btn btn-primary btn-sm mb3">Usuarios</a>
-
-        </div>
-        <div class="row">
-            <a th:href="@{/new}" class="btn btn-primary btn-sm mb3">Empresas</a>
-
-        </div>
-    </section>
-
-    <section class="botones-principal">
-        <div class="botones-principal btn-princial">
-            <button type="submit" th:href="@{/new}" class="btn1">Sistema de gestión de ingresos y gastos</button>
-        </div>
-        <div class="botones-principal btn-princial">
-            <button type="submit" th:href="@{/new}" class="btn1">Sistema de gestión de usuarios</button>
-
-        </div>
-        <div class="botones-principal btn-princial">
-            <a th:href="@{/enterprise_admin}" class="btn1">Sistema de gestión de empresa</a>
-
-        </div>
-    </section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -20,8 +20,20 @@ public class EnterpriseController {
     @Autowired
     private EnterpriseService service;
 
-    @GetMapping({"/enterprise_admin"})
+/*     @GetMapping({"/enterprise_admin"})
     public String enterprise_admin(){
+        return "gestion_empresas";
+    } */
+
+    @GetMapping({"/new_enterprise"})
+    public String formularioNuevoEmpleado(Model model){
+        model.addAttribute("enterprise", new Enterprise());
+        return "crear_empresa";
+    }
+
+    @GetMapping({"/enterprise_admin"})
+    public String listarEmpleados(Model model){
+        model.addAttribute("enterprises", service.getEnterprise());
         return "gestion_empresas";
     }
 }
