@@ -14,8 +14,47 @@
 <body>
     <!-- <h1>Hola Mundo!</h1> -->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a th:href="@{/index}" class="navbar-brand">Sistema de gestión de empresa</a>
+        <a th:href="@{/}" class="navbar-brand">Sistema de gestión de empresa</a>
     </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-20 col-md-20 col-sm-20 container justify-content-center card">
+                <h1 class="text-center"> Crear nueva empresa</h1>
+                <div class="card-body">
+                    <form th:action="@{/enterprise_admin}" th:object="${enterprise}" th:method="post">
+
+                        <div class="form-group">
+                        <label>Nombre: </label>
+                        <input type="text" name="nombre" th:field="*{name}" class="form-control" placeholder="Digite el nombre: " required>
+                        </div>
+
+                   <div class="form-group">
+                    <label>Nit: </label>
+                            <input type="text" name="nit" th:field="*{nit}" class="form-control" placeholder="Digite el nit: " required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address: </label>
+                            <input type="text" name="address" th:field="*{address}" class="form-control" placeholder="Digite el dirección: " required>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono: </label>
+                            <input type="text" name="phone" th:field="*{phone}" class="form-control" placeholder="Digite el teléfono: " required>
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha de creación: </label>
+                            <input type="date" name="created_at" th:field="*{created_at}" class="form-control" placeholder="Digite el teléfono: " required>
+                        </div>
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
