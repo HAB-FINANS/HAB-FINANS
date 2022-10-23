@@ -50,7 +50,13 @@
                     <td th:text="${enterprise.phone}"></td>
                     <td th:text="${enterprise.created_at}"></td>
                     <td th:text="${enterprise.updated_at}"></td>
-                    <td th:text="${enterprise.created_at}"></td>
+                    <td>
+                      <form th:action="@{/delete/{id}(id=${idEnterprise})}" th:method="delete">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                      </form>
+
+
+                    </td>
                   </tr>
                 </tbody>
                 </table>
