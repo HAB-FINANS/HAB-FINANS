@@ -3,27 +3,67 @@ package com.habfinans.habfinans.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.habfinans.habfinans.Models.Enterprise;
 import com.habfinans.habfinans.Models.ObjectAnswer;
 import com.habfinans.habfinans.service.ServiceInterfaceEnterprise;
 
-@RestController
+/* @RestController */
+@Controller
 public class ControllerEnterprise {
 
     //Hacemos la inyeccion del objeto de tipo ServiceInterfaceEnterprise
     @Autowired
     private ServiceInterfaceEnterprise serviceInterfaceEnterprise;
 
+    //Lista de enterprise
+    @GetMapping({"/enterprise_admin"})
+    public String listarEmpresa(Model model){
+        model.addAttribute("enterprises", serviceInterfaceEnterprise.getEnterprise());
+        return "admin_enterprise";
+    }
+
+
+
+    //Dirigirse a crear una nueva empresa 
+    @GetMapping({"/new_enterprise"})
+    public String fromNewEnterprise(Model model){
+        model.addAttribute("enterprise", new Enterprise());
+        return "create_enterprise";
+    }
+
+    //Devolverse al la página después de crear la enterprise
+    @PostMapping({"/enterprise_admin"})
+    public RedirectView crearEnterprise(@ModelAttribute @DateTimeFormat(pattern = "yyyy-MM-DD") Enterprise enterprise, Model model){
+        model.addAttribute(enterprise);
+        this.serviceInterfaceEnterprise.getCreateEnterprise(enterprise);
+        return new RedirectView("/enterprise_admin");
+    }
+
+    //Eliminar un registro
+    @DeleteMapping("/enterprise_admin/delete/{idEnterprise}")
+    public String eliminarEnterprise(@PathVariable Long idEnterprise) throws Exception{
+        serviceInterfaceEnterprise.getDeleteEnterprise(idEnterprise);
+        return "redirect:/enterprise_admin";
+    }
+
+
+   
+/* 
     //Creamos los mapping
     @GetMapping("/ListEnterprise")
     public ResponseEntity <List<Enterprise>> getEnterprise(){
@@ -77,7 +117,7 @@ public class ControllerEnterprise {
         catch (Exception e){
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    } */
 
     
 

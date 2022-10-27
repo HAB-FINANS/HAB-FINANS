@@ -23,32 +23,41 @@
                 <h1 class="text-center"> Crear nueva empresa</h1>
                 <div class="card-body">
                     <form th:action="@{/enterprise_admin}" th:object="${enterprise}" th:method="post">
+                        <div class="form-group">
+                            <label>Nombre: </label>
+                            <input type="text" name="id" th:field="*{idEnterprise}" class="form-control" placeholder="Digite el id: " required>
 
                         <div class="form-group">
                         <label>Nombre: </label>
-                        <input type="text" name="nombre" th:field="*{name}" class="form-control" placeholder="Digite el nombre: " required>
-                        </div>
+                        <input type="text" name="nombre" th:field="*{nameEnterprise}" class="form-control" placeholder="Digite el nombre: " required>
 
-                   <div class="form-group">
-                    <label>Nit: </label>
-                            <input type="text" name="nit" th:field="*{nit}" class="form-control" placeholder="Digite el nit: " required>
+                         <label>Nit: </label>
+                            <input type="text" name="nit" th:field="*{NITEnterprise}" class="form-control" placeholder="Digite el nit: " required>
                         </div>
                         <div class="form-group">
                             <label>Address: </label>
-                            <input type="text" name="address" th:field="*{address}" class="form-control" placeholder="Digite el dirección: " required>
+                            <input type="text" name="address" th:field="*{addressEnterprise}" class="form-control" placeholder="Digite el dirección: " required>
                         </div>
                         <div class="form-group">
                             <label>Teléfono: </label>
-                            <input type="text" name="phone" th:field="*{phone}" class="form-control" placeholder="Digite el teléfono: " required>
+                            <input type="text" name="phone" th:field="*{phoneEnterprise}" class="form-control" placeholder="Digite el teléfono: " required>
                         </div>
+
                         <div class="form-group">
                             <label>Fecha de creación: </label>
-                            <input type="date" name="created_at" th:field="*{created_at}" class="form-control" placeholder="Digite el teléfono: " required>
+                            <input type="date" name="created_at" th:field="*{createdAtEnterprise}" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Fecha de actualización: </label>
+                            <input type="date" name="updated_at" th:field="*{updatedAtEnterprise}" class="form-control" required>
                         </div>
 
                         <div class="box-footer">
                             <button type="submit" class="btn btn-success">Guardar</button>
                         </div>
+
+                        
                     </form>
                 </div>
             </div>

@@ -42,18 +42,29 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr th:each="enterprise : ${enterprises}">
-                    <td th:text="${enterprise.id}"></td>
-                    <td th:text="${enterprise.name}"></td>
-                    <td th:text="${enterprise.nit}"></td>
-                    <td th:text="${enterprise.address}"></td>
-                    <td th:text="${enterprise.phone}"></td>
-                    <td th:text="${enterprise.created_at}"></td>
-                    <td th:text="${enterprise.updated_at}"></td>
+                  <tr th:each="enterprise : ${Enterprises}">
+                    <td th:text="${enterprise.idEnterprise}"></td>
+                    <td th:text="${enterprise.nameEnterprise}"></td>
+                    <td th:text="${enterprise.NITEnterprise}"></td>
+                    <td th:text="${enterprise.addressEnterprise}"></td>
+                    <td th:text="${enterprise.phoneEnterprise}"></td>
+                    
+                    <td th:text="${enterprise.createdAtEnterprise}"></td>
+                    
+                    <td th:text="${enterprise.updatedAtEnterprise}"></td>
+                    
                     <td>
-                      <form th:action="@{/delete/{id}(id=${idEnterprise})}" th:method="delete">
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <form th:action="@{/update/{idEnterprise}(id=${idEnterprise})}" th:method="update">
+
+                        <button type="submit" class="btn btn-info">Editar</button>
+                      
                       </form>
+
+                      <form th:action="@{/enterprise_admin/delete/{idEnterprise}(idEnterprise=${enterprise.idEnterprise})}" th:method="delete">
+                      
+                      <button type="submit" class="btn btn-danger">Eliminar</button>
+                      </form> 
+
 
 
                     </td>

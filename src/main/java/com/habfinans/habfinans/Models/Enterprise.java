@@ -12,7 +12,10 @@ import javax.persistence.*;
 public class Enterprise {
     //Attributes
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+
     private Long idEnterprise;
+
     @Column
     private String nameEnterprise;
     @Column
@@ -26,19 +29,19 @@ public class Enterprise {
     @OneToMany(mappedBy = "enterpriseEmployee")
     private List<Employee> employee;
     @Column
-    private Date creatredAtEnterprise;
+    private Date createdAtEnterprise;
     @Column
     private Date updatedAtEnterprise;
 
     //Constructor
-    public Enterprise(Long idEnterprise, String nameEnterprise, String nITEnterprise, String phoneEnterprise,
-            String addressEnterprise, Date creatredAtEnterprise, Date updatedAtEnterprise) {
+    public Enterprise(Long idEnterprise, String nameEnterprise, String NITEnterprise, String phoneEnterprise,
+            String addressEnterprise, Date createdAtEnterprise, Date updatedAtEnterprise) {
         this.idEnterprise = idEnterprise;
         this.nameEnterprise = nameEnterprise;
-        NITEnterprise = nITEnterprise;
+        this.NITEnterprise = NITEnterprise;
         this.phoneEnterprise = phoneEnterprise;
         this.addressEnterprise = addressEnterprise;
-        this.creatredAtEnterprise = creatredAtEnterprise;
+        this.createdAtEnterprise = createdAtEnterprise;
         this.updatedAtEnterprise = updatedAtEnterprise;
     }
 
@@ -82,8 +85,8 @@ public class Enterprise {
 
 
 
-    public void setNITEnterprise(String nITEnterprise) {
-        NITEnterprise = nITEnterprise;
+    public void setNITEnterprise(String NITEnterprise) {
+        this.NITEnterprise = NITEnterprise;
     }
 
 
@@ -136,14 +139,14 @@ public class Enterprise {
 
 
 
-    public Date getCreatredAtEnterprise() {
-        return creatredAtEnterprise;
+    public Date getcreatedAtEnterprise() {
+        return createdAtEnterprise;
     }
 
 
 
-    public void setCreatredAtEnterprise(Date creatredAtEnterprise) {
-        this.creatredAtEnterprise = creatredAtEnterprise;
+    public void setcreatedAtEnterprise(Date createdAtEnterprise) {
+        this.createdAtEnterprise = createdAtEnterprise;
     }
 
 
