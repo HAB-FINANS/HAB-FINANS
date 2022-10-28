@@ -20,9 +20,11 @@ public class Transaction {
     private float amountTransaction;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToOne
+    @JoinColumn(name = "idEmployee")
     private Employee employeeTransaction;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToOne
+    @JoinColumn(name = "idEnterprise")
     private Enterprise enterpriseTransaction;
     @Column
     private Date createdAtTransaction;

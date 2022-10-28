@@ -16,14 +16,15 @@
 <body>
     <!-- <h1>Hola Mundo!</h1> -->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a href="#" class="navbar-brand">Administrador</a>
+        <a th:href="@{/}" class="navbar-brand">Sistema de gestión de empresa</a>
     </nav>
     <div class="container">
         <div class="row">
-            <h1>Libreta de empleados</h1>
+            <h1>Libreta de empleado</h1>
         </div>
+
         <div class="row">
-            <a th:href="@{/new}" class="btn btn-primary btn-sm mb3">Agregar empleado</a>
+            <a th:href="@{/new_employee}" class="btn btn-primary btn-sm mb3">Agregar empleado</a>
 
         </div>
         <div class="row">
@@ -33,26 +34,51 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Role</th>
+                    <th>Phone</th>
                     <th>Enterprise</th>
+                    <th>Role</th>
+
+<!--                     <th>Created At</th> -->
+                    <th>Updated At</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr th:each="employee : ${employees}">
-                    <td th:text="${employee.id}"></td>
-                    <td th:text="${employee.name}"></td>
-                    <td th:text="${employee.email}"></td>
-                    <td th:text="${employee.role}"></td>
-                    <td th:text="${employee.enterprise}"></td>
-                    <td th:text="${employee.id}"></td>
+                  <tr th:each="employee : ${employee}">
+                    <td th:text="${employee.idEmployee}">Id</td>
+                   <td th:text="${employee.nameEmployee}">Nombre</td>
+                    <td th:text="${employee.emailEmployee}"></td>
+                    
+                    <td th:text="${employee.phoneEmployee}"></td>
+                    <td th:text="${employee.enterpriseEmployee.nameEnterprise}"></td>
+                    <td th:text="${employee.rolesEmployee}"></td>
+<!--                     
+                   <td th:text="${employee.createdAtemployee}"></td>
+                     -->
+                    <td th:text="${employee.updatedAtEmployee}"></td>
+                    
+                    <td>
+                    <a th:href="@{employee_admin/edit/{idEmployee} (idEmployee=${employee.idEmployee})}" class="btn btn-info">Editar</a>
+
+
+                      
+
+
+                      <form th:action="@{/employee_admin/delete/{idEmployee}(idEmployee=${employee.idEmployee})}" th:method="delete">
+                      
+                      <button type="submit" class="btn btn-danger">Eliminar</button>
+                      </form>
+
+
+
+                    </td>
                   </tr>
                 </tbody>
                 </table>
 
         </div>
 
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

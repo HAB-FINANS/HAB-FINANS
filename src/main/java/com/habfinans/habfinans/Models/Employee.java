@@ -25,9 +25,12 @@ public class Employee {
     @ElementCollection(targetClass = ROLES.class,fetch = FetchType.EAGER)
     private List<ROLES> rolesEmployee;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+
     @ManyToOne
+    @JoinColumn(name = "idEnterprise")
     private Enterprise enterpriseEmployee;
     @OneToMany
+    @JoinColumn(name = "idTransaction")
     private List<Transaction> transaction;
     @Column
     private Date updatedAtEmployee;

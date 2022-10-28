@@ -1,0 +1,89 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    <title>Ingreso al sitio</title>
+  
+    <!-- <link rel="stylesheet" href="/HAB-FINANS/src/main/resources/static/css/styles.css"> -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- <h1>Hola Mundo!</h1> -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a th:href="@{/}" class="navbar-brand">Sistema de gestión de empleados</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-20 col-md-20 col-sm-20 container justify-content-center card">
+                <h1 class="text-center"> Crear nuevo empleado</h1>
+                <div class="card-body">
+                    <form th:action="@{/employee_admin}" th:object="${employee}" th:method="post">
+                        <div class="form-group">
+                            <label>ID: </label>
+                            <input type="number" name="id" th:field="*{idEmployee}" class="form-control" placeholder="Digite el id: " required>
+
+                        <div class="form-group">
+                        <label>Nombre: </label>
+                        <input type="text" name="nombre" th:field="*{nameEmployee}" class="form-control" placeholder="Digite el nombre: " required>
+
+                         <label>Email: </label>
+                            <input type="text" name="email" th:field="*{emailEmployee}" class="form-control" placeholder="Digite el nit: " required>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono: </label>
+                            <input type="text" name="phone" th:field="*{phoneEmployee}" class="form-control" placeholder="Digite el dirección: " required>
+                        </div>
+                       <div class="form-group">
+                            <label>Id Empresa: </label>
+                            <input type="number" name="enterprise" th:field="*{enterpriseEmployee.idEnterprise}" class="form-control" placeholder="Digite el teléfono: " required>
+                        </div>
+
+                        <div class="form-group">
+                            <label th:for="Role">Role: </label>
+<!--                                 <Select id="Role" th:field="*{rolesEmployee}">
+
+                                    <option th:each="roles : ${ROLES}"
+                                    th:text="${ROLES.name}"
+                                    th:value="${ROLES}">
+
+                                    </option>
+                                </Select> -->
+                    <input type="text" name="role" th:field="*{rolesEmployee}" class="form-control" placeholder="Digite el rol: " required>
+
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <label>Fecha de creación: </label>
+                            <input type="date" name="created_at" th:field="*{createdAtEmployee}" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Fecha de actualización: </label>
+                            <input type="date" name="updated_at" th:field="*{updatedAtEmployee}" class="form-control" required>
+                        </div>
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
