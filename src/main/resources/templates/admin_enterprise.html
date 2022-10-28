@@ -36,21 +36,21 @@
                     <th>Nit</th>
                     <th>Address</th>
                     <th>Phone</th>
-                    <th>Created At</th>
+<!--                     <th>Created At</th> -->
                     <th>Updated At</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr th:each="enterprise : ${Enterprises}">
-                    <td th:text="${enterprise.idEnterprise}"></td>
-                    <td th:text="${enterprise.nameEnterprise}"></td>
+                  <tr th:each="enterprise : ${enterprise}">
+                    <td th:text="${enterprise.idEnterprise}">Id</td>
+                   <td th:text="${enterprise.nameEnterprise}">Nombre</td>
                     <td th:text="${enterprise.NITEnterprise}"></td>
                     <td th:text="${enterprise.addressEnterprise}"></td>
                     <td th:text="${enterprise.phoneEnterprise}"></td>
-                    
-                    <td th:text="${enterprise.createdAtEnterprise}"></td>
-                    
+<!--                     
+                   <td th:text="${enterprise.createdAtEnterprise}"></td>
+                     -->
                     <td th:text="${enterprise.updatedAtEnterprise}"></td>
                     
                     <td>
@@ -63,7 +63,7 @@
                       <form th:action="@{/enterprise_admin/delete/{idEnterprise}(idEnterprise=${enterprise.idEnterprise})}" th:method="delete">
                       
                       <button type="submit" class="btn btn-danger">Eliminar</button>
-                      </form> 
+                      </form>
 
 
 

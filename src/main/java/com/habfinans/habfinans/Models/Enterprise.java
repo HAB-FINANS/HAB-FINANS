@@ -139,14 +139,15 @@ public class Enterprise {
 
 
 
-    public Date getcreatedAtEnterprise() {
-        return createdAtEnterprise;
-    }
 
 
 
     public void setcreatedAtEnterprise(Date createdAtEnterprise) {
         this.createdAtEnterprise = createdAtEnterprise;
+    }
+
+    public Date getcreatedAtEnterprise() {
+        return createdAtEnterprise;
     }
 
 

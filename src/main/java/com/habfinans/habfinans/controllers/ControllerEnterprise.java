@@ -1,11 +1,11 @@
 package com.habfinans.habfinans.controllers;
 
-import java.util.List;
+//import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+//import org.springframework.http.HttpStatus;
+//import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.bind.annotation.PutMapping;
+//import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.habfinans.habfinans.Models.Enterprise;
-import com.habfinans.habfinans.Models.ObjectAnswer;
+//import com.habfinans.habfinans.Models.ObjectAnswer;
 import com.habfinans.habfinans.service.ServiceInterfaceEnterprise;
 
 /* @RestController */
@@ -33,7 +33,7 @@ public class ControllerEnterprise {
     //Lista de enterprise
     @GetMapping({"/enterprise_admin"})
     public String listarEmpresa(Model model){
-        model.addAttribute("enterprises", serviceInterfaceEnterprise.getEnterprise());
+        model.addAttribute("enterprise", serviceInterfaceEnterprise.getEnterprise());
         return "admin_enterprise";
     }
 
