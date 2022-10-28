@@ -47,6 +47,7 @@ public class ServiceEnterprise implements ServiceInterfaceEnterprise{
         return repositoryEnterprise.findAll();
     }
 
+    //Actualizar
     @Override
     public Enterprise getOnlyOneEnterprise(Long idEnterprise) throws Exception {
         Optional<Enterprise> EnterpriseBD = repositoryEnterprise.findById(idEnterprise);

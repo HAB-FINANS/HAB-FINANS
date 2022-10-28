@@ -46,6 +46,8 @@ public class ControllerEnterprise {
         return "create_enterprise";
     }
 
+
+
     //Devolverse al la página después de crear la enterprise
     @PostMapping({"/enterprise_admin"})
     public RedirectView crearEnterprise(@ModelAttribute @DateTimeFormat(pattern = "yyyy-MM-DD") Enterprise enterprise, Model model){
@@ -61,6 +63,20 @@ public class ControllerEnterprise {
         return "redirect:/enterprise_admin";
     }
 
+    @GetMapping("/enterprise_admin/edit/{idEnterprise}")
+    public String formularioEditar(@PathVariable long idEnterprise, Model model) throws Exception {
+        Enterprise enterprise = serviceInterfaceEnterprise.getOnlyOneEnterprise(idEnterprise);
+        model.addAttribute("enterprise", enterprise);
+
+        return "update_enterprise";
+    }
+
+    @PostMapping("/update/{idEnterprise}")
+    public String actualizarEnterprise(@PathVariable("idEnterprise") Long idEnterprise, Enterprise enterprise) throws Exception{
+        serviceInterfaceEnterprise.getUpdateEnterprise(enterprise);
+
+        return "redirect:/enterprise_admin";
+    }
 
    
 /* 

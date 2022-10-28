@@ -54,11 +54,11 @@
                     <td th:text="${enterprise.updatedAtEnterprise}"></td>
                     
                     <td>
-                    <form th:action="@{/update/{idEnterprise}(id=${idEnterprise})}" th:method="update">
+                    <a th:href="@{enterprise_admin/edit/{idEnterprise} (idEnterprise=${enterprise.idEnterprise})}" class="btn btn-info">Editar</a>
 
-                        <button type="submit" class="btn btn-info">Editar</button>
+
                       
-                      </form>
+
 
                       <form th:action="@{/enterprise_admin/delete/{idEnterprise}(idEnterprise=${enterprise.idEnterprise})}" th:method="delete">
                       
