@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.habfinans.habfinans.Models.Employee;
-import com.habfinans.habfinans.Models.ROLES;
+//import com.habfinans.habfinans.Models.ROLES;
 //import com.habfinans.habfinans.Models.ObjectAnswer;
 import com.habfinans.habfinans.service.ServiceInterfaceEmployee;
 
@@ -44,7 +44,6 @@ public class ControllerEmployee {
     @GetMapping({"/new_employee"})
     public String fromNewEmployee(Model model){
         model.addAttribute("employee", new Employee());
-        model.addAttribute("roles", ROLES.values());
         return "create_employee";
     }
 
@@ -73,7 +72,7 @@ public class ControllerEmployee {
         return "update_employee";
     }
 
-    @PostMapping("/update/{idEmployee}")
+    @PostMapping("/employee_admin/update/{idEmployee}")
     public String actualizarEmployee(@PathVariable("idEmployee") Long idEmployee, Employee employee) throws Exception{
         serviceInterfaceEmployee.getUpdateEmployee(employee);
 

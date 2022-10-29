@@ -1,7 +1,13 @@
 package com.habfinans.habfinans.Models;
 
+import javax.persistence.Table;
+
+@Table(name = "rolesEmployee")
 public enum ROLES {
-    ADIMN ("Admin"),
+
+    ADMIN,
+    OPERARIO
+/*     ADIMN ("Admin"),
     OPERARIO ("Operario");
 
     private final String name;
@@ -12,6 +18,6 @@ public enum ROLES {
 
     public String getName() {
         return name;
-    }
+    } */
     
 }

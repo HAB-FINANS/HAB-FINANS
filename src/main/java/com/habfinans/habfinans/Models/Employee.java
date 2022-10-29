@@ -5,7 +5,8 @@ import java.util.List;
 
 import javax.persistence.Entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+//import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import javax.persistence.*;
 
@@ -21,10 +22,10 @@ public class Employee {
     private String phoneEmployee;
     @Column
     private String emailEmployee;
+    
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = ROLES.class,fetch = FetchType.EAGER)
     private List<ROLES> rolesEmployee;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 
     @ManyToOne
     @JoinColumn(name = "idEnterprise")

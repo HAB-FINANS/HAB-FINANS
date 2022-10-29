@@ -16,15 +16,15 @@
 <body>
     <!-- <h1>Hola Mundo!</h1> -->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a th:href="@{/}" class="navbar-brand">Sistema de gestión de empresas</a>
+        <a th:href="@{/}" class="navbar-brand">Sistema de gestión de transacciones</a>
     </nav>
     <div class="container">
         <div class="row">
-            <h1>Libreta de empresas</h1>
+            <h1>Libreta de Transaccciones</h1>
         </div>
 
         <div class="row">
-            <a th:href="@{/new_enterprise}" class="btn btn-primary btn-sm mb3">Agregar empresa</a>
+            <a th:href="@{/new_transaction}" class="btn btn-primary btn-sm mb3">Agregar Transaccion</a>
 
         </div>
         <div class="row">
@@ -32,38 +32,41 @@
                 <thead class="table-dark">
                   <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Nit</th>
-                    <th>Address</th>
-                    <th>Phone</th>
+                    <th>Concept</th>
+                    <th>Cantidad</th>
+                    <th>Empleador</th>
+                    <th>Empresa</th>
 <!--                     <th>Created At</th> -->
                     <th>Updated At</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr th:each="enterprise : ${enterprise}">
-                    <td th:text="${enterprise.idEnterprise}">Id</td>
-                   <td th:text="${enterprise.nameEnterprise}">Nombre</td>
-                    <td th:text="${enterprise.NITEnterprise}"></td>
-                    <td th:text="${enterprise.addressEnterprise}"></td>
-                    <td th:text="${enterprise.phoneEnterprise}"></td>
+                  <tr th:each="transaction : ${transaction}">
+                    <td th:text="${transaction.idTransaction}">Id</td>
+                   <td th:text="${transaction.conceptTransaction}">Concepto</td>
+                   <td th:text="${transaction.amountTransaction}">Cantidad</td>
+                    <td th:text="${transaction.employeeTransaction.nameEmployee}"></td>
+                    <td th:text="${transaction.enterpriseTransaction.nameEnterprise}"></td>
 <!--                     
-                   <td th:text="${enterprise.createdAtEnterprise}"></td>
+                   <td th:text="${transaction.createdAttransaction}"></td>
                      -->
-                    <td th:text="${enterprise.updatedAtEnterprise}"></td>
+                    <td th:text="${transaction.updatedAtTransaction}"></td>
                     
                     <td>
-                    <a th:href="@{enterprise_admin/edit/{idEnterprise} (idEnterprise=${enterprise.idEnterprise})}" class="btn btn-info">Editar</a>
+                    <a th:href="@{transaction_admin/edit/{idTransaction} (idTransaction=${transaction.idTransaction})}" class="btn btn-info">Editar</a>
 
 
                       
 
 
-                      <form th:action="@{/enterprise_admin/delete/{idEnterprise}(idEnterprise=${enterprise.idEnterprise})}" th:method="delete">
+                      <form th:action="@{/transaction_admin/delete/{idTransaction}(idTransaction=${transaction.idTransaction})}" th:method="delete">
                       
                       <button type="submit" class="btn btn-danger">Eliminar</button>
                       </form>
+
+
+                      <a th:href="@{transaction_admin/movements/{idTransaction} (idTransaction=${transaction.idTransaction})}" class="btn btn-info">Transcciones</a>
 
 
 
