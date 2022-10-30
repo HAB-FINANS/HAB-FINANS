@@ -20,19 +20,26 @@
             <p class="container-parrafo1">Bienviendo a la página de inicio de FINANS su software de administración</p>
         </section>
 
-        <section class="contenedor-login">
-           <h1 class="container-contenedor-login-texto">Ingreso a HAB-FINANS</h1> 
-           <form action="" class="contenedor-formulario">
-            <input placeholder="Usuario" type="text">
-            <input placeholder="Contraseña" type="password">
-            <button type="submit" th:href="@{/enter}" >ACCEDER</button>
-        </form>
-        </section>
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a href="#" class="navbar-brand">HAB-FINANS</a>
-        </nav>
         <div class="container">
-
+            <br>
+            <div>
+                <h1>Ingrese sus datos de sesión para entrar al sistema</h1>
+            </div>
+            <div class="alert alert-danger" th:if="${param.error}">Nombre de usuario o contraseña
+                incorrectos.</div>
+            <div class="alert alert-success" th:if="${param.logout}">Sesión cerrada correctamente.</div>
+            <form class="form-horizontal" th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <input type="text" placeholder="Usuario" class="form-control"
+                        name="username" />
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Contraseña" class="form-control" name="password" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Entrar" />
+                </div>
+            </form>
         </div>
 
 

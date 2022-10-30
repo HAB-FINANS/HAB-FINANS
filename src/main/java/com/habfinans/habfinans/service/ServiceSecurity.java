@@ -38,7 +38,12 @@ public class ServiceSecurity extends WebSecurityConfigurerAdapter{
         .anyRequest()
         .authenticated()
         .and()
-        .httpBasic(); 
+        .formLogin()
+        .loginPage("/login")
+        .defaultSuccessUrl("/",true)
+        .permitAll()
+        .and()
+        .logout().permitAll(); 
 
     }
 
